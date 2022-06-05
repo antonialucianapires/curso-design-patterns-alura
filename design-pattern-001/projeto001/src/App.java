@@ -1,21 +1,17 @@
 import java.math.BigDecimal;
 
-import br.com.alura.loja.desconto.CalculadoraDeDescontos;
-import br.com.alura.loja.imposto.CalculadoraDeImpostos;
-import br.com.alura.loja.imposto.ICMS;
-import br.com.alura.loja.orcamento.Orcamento;
+import br.com.alura.loja.pedido.GeraPedido;
+import br.com.alura.loja.pedido.GeraPedidoHandler;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
+
+        //Command - técnica de extração do caso de uso para uma classe específica
+        var geraPedido = new GeraPedido("Gio", new BigDecimal("600"), 4); //resp por reunir os dados
+        var handler = new GeraPedidoHandler(); //resp por executar as ações sobre os dados reunidos
+        handler.executa(geraPedido);
         
-        Orcamento orcamento = new Orcamento(new BigDecimal("1000"), 1);
-
-        var calculadoraImposto = new CalculadoraDeImpostos();
-        var calculadoraDesconto = new CalculadoraDeDescontos();
-
-        System.out.println("calculadora de impostos: " + calculadoraImposto.calcular(orcamento, new ICMS()));
-        System.out.println("calculadora de descontos: " + calculadoraDesconto.calcular(orcamento));
-
+  
     }
 }
