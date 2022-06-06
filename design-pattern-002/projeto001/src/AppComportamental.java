@@ -6,7 +6,7 @@ import br.com.alura.loja.pedido.GeraPedido;
 import br.com.alura.loja.pedido.GeraPedidoHandler;
 import br.com.alura.loja.pedido.SalvarPedido;
 
-public class App {
+public class AppComportamental {
 
     public static void main(String[] args) throws Exception {
 
