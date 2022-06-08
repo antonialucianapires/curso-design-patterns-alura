@@ -23,7 +23,7 @@ public class RegistroDeOrcamento {
         var url = "https://api.externa/orcamento";
         Map<String, Object> dados = Map.of(
             "valor_orcamento", orcamento.getValor(),
-            "quantidade_itens", orcamento.getQuantidadeItens()
+            "quantidade_itens", orcamento.getItens().size()
         );
 
         http.post(url, dados);

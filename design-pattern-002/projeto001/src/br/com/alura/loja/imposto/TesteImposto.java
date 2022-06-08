@@ -2,12 +2,14 @@ package br.com.alura.loja.imposto;
 
 import java.math.BigDecimal;
 
+import br.com.alura.loja.orcamento.Item;
 import br.com.alura.loja.orcamento.Orcamento;
 
 public class TesteImposto {
 
     public static void main(String[] args) {
-        Orcamento orcamento = new Orcamento(new BigDecimal("200"), 1);
+        Orcamento orcamento = new Orcamento();
+        orcamento.adicionarItem(new Item(new BigDecimal("200")));
 
         CalculadoraDeImpostos calculadoraDeImpostos = new CalculadoraDeImpostos();
 
