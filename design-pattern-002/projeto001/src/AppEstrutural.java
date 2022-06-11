@@ -3,6 +3,7 @@ import java.math.BigDecimal;
 import br.com.alura.loja.http.JavaHttpClient;
 import br.com.alura.loja.orcamento.Item;
 import br.com.alura.loja.orcamento.Orcamento;
+import br.com.alura.loja.orcamento.OrcamentoProxy;
 import br.com.alura.loja.orcamento.RegistroDeOrcamento;
 
 public class AppEstrutural {
@@ -29,7 +30,10 @@ public class AppEstrutural {
         novo.adicionarItem(new Item(new BigDecimal("500")));
         novo.adicionarItem(antigo);
 
-        System.out.println("orçamento novo reaproveitando orçamento antigo: " + novo.getValor());
+        OrcamentoProxy orcamentoProxy = new OrcamentoProxy(orcamento);
+
+        System.out.println("orçamento novo reaproveitando orçamento antigo: " + orcamentoProxy.getValor());
+        System.out.println("orçamento novo reaproveitando orçamento antigo: " + orcamentoProxy.getValor());
 
         
     }

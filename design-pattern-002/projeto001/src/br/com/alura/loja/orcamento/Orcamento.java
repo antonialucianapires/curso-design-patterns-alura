@@ -21,6 +21,11 @@ public class Orcamento implements Orcavel{
     }
 
     public BigDecimal getValor() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Falha ao consultar valor. " + e.getMessage());
+        }
         return this.valor;
     }
 
